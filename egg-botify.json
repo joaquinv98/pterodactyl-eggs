@@ -1,0 +1,26 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1"
+    },
+    "exported_at": "2020-10-24T00:19:14-03:00",
+    "name": "Botify",
+    "author": "joaquin@rciag.tech",
+    "description": "Discord bot that plays Spotify tracks and YouTube videos or plays any URL including Soundcloud links and Twitch streams.\r\n\r\nTo configure please read: https:\/\/github.com\/robinfriedli\/botify\r\nSteps  1 to 5\r\n\r\nNOTE: YOU NEED A WORKING DATABASE",
+    "image": "docker.io\/joaquinv98\/maven-pterodactyl:0.0.6",
+    "startup": "mvn exec:java -Dexec.mainClass=net.robinfriedli.botify.boot.Launcher",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"change this part\"\r\n}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n# Botify Bot Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\n\r\n## Move to install folder\r\ncd \/mnt\/server\/\r\n\r\n## Clone repo\r\ngit clone -q --depth 1 https:\/\/github.com\/robinfriedli\/botify .\/\r\n\r\nmvn clean install",
+            "container": "docker.io\/maven",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": []
+}
